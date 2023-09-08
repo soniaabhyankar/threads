@@ -120,6 +120,7 @@ const AccountProfile = ({ user, btnTitle }: AccountProfileProps) => {
 									onChange={(e) => handleImage(e, field.onChange)}
 								/>
 							</FormControl>
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -134,6 +135,7 @@ const AccountProfile = ({ user, btnTitle }: AccountProfileProps) => {
 							<FormControl>
 								<Input placeholder='Your first name' type='text' className='account-form_input no-focus' {...field} />
 							</FormControl>
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -148,6 +150,7 @@ const AccountProfile = ({ user, btnTitle }: AccountProfileProps) => {
 							<FormControl>
 								<Input placeholder='Your username' type='text' className='account-form_input no-focus' {...field} />
 							</FormControl>
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
@@ -162,6 +165,7 @@ const AccountProfile = ({ user, btnTitle }: AccountProfileProps) => {
 							<FormControl>
 								<Textarea rows={10} placeholder='Your bio' className='account-form_input no-focus' {...field} />
 							</FormControl>
+							<FormMessage />
 						</FormItem>
 					)}
 				/>
