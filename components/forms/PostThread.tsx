@@ -4,13 +4,11 @@ import * as z from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { Textarea } from '@/components/ui/textarea';
-import { useUploadThing } from '@/lib/uploadthing';
 
 import { usePathname, useRouter } from 'next/navigation';
 
-// import { updateUser } from '@/lib/actions/user.actions';
 import { ThreadValidation } from '@/lib/validations/thread';
 import { createThread } from '@/lib/actions/thread.actions';
 

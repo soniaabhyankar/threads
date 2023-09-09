@@ -25,9 +25,9 @@ interface Props {
 	isComment?: boolean;
 }
 
-const ThreadCard = ({ id, currentUserId, parentId, content, author, community, createdAt, comments }: Props) => {
+const ThreadCard = ({ id, currentUserId, parentId, content, author, community, createdAt, comments, isComment }: Props) => {
 	return (
-		<article className='flex w-full flex-col rounded-xl bg-dark-2 p-7'>
+		<article className={`flex w-full flex-col rounded-xl ${isComment ? 'px-0 xs:px-7' : 'bg-dark-2 p-7'}`}>
 			<div className='flex items-start-justify-between'>
 				<div className='flex w-full flex-1 flex-row gap-4'>
 					{/* Image */}
@@ -58,6 +58,12 @@ const ThreadCard = ({ id, currentUserId, parentId, content, author, community, c
 								<Image src='/assets/repost.svg' alt='repost' width={24} height={24} />
 								<Image src='/assets/share.svg' alt='share' width={24} height={24} />
 							</div>
+
+							{isComment && comments.length > 0 && (
+								<Link href={`/thread/${id}`}>
+									<p className='mt-1 text-subtle-medium text-gray-1'>{comments.length} replies</p>
+								</Link>
+							)}
 						</div>
 					</div>
 				</div>
