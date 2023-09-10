@@ -133,6 +133,13 @@ export async function addComment(threadId: string, commentText: string, userId: 
 		// Save the original thread
 		await originalThread.save();
 
+		// Update User model with the new added comment
+		await User.findByIdAndUpdate(userId, {
+			$push: {
+				threads: savedCommentThread._id,
+			},
+		});
+
 		revalidatePath(path);
 	} catch (error: any) {
 		throw new Error(`Error adding a new comment: ${error.message}`);
