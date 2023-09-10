@@ -1,6 +1,5 @@
 import { fetchUserPosts } from '@/lib/actions/user.actions';
 import { redirect } from 'next/navigation';
-import React from 'react';
 import ThreadCard from '../cards/ThreadCard';
 
 interface Props {
